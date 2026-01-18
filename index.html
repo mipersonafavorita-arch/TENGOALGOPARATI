@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Ti ❤️</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#ffe0ec,#e3f2fd);
+  overflow:hidden;
+}
+
+/* PANTALLAS */
+.pantalla{
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* OCULTAR */
+.oculta{
+  display:none;
+}
+
+/* CAJA */
+.caja{
+  background:white;
+  padding:40px;
+  border-radius:25px;
+  text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,0.3);
+  max-width:420px;
+  width:90%;
+}
+
+/* BOTONES */
+button{
+  margin-top:25px;
+  padding:15px 35px;
+  font-size:18px;
+  border:none;
+  border-radius:50px;
+  background:#ff4d6d;
+  color:white;
+  cursor:pointer;
+  transition:.3s;
+}
+button:hover{
+  transform:scale(1.05);
+}
+
+/* VIDEO */
+#pantallaVideo{
+  background:black;
+}
+video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PANTALLA 1 -->
+<div id="pantalla1" class="pantalla">
+  <div class="caja">
+    <h1>💖 Hola amor 💖</h1>
+    <p>Tengo algo especial para ti</p>
+    <button onclick="irPantalla2()">Continuar</button>
+  </div>
+</div>
+
+<!-- PANTALLA 2 -->
+<div id="pantalla2" class="pantalla oculta">
+  <div class="caja">
+    <h1>✨ Ábreme ✨</h1>
+    <button onclick="mostrarVideo()">Ábreme</button>
+  </div>
+</div>
+
+<!-- PANTALLA VIDEO -->
+<div id="pantallaVideo" class="pantalla oculta">
+  <video controls autoplay>
+    <source src="video.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+  </video>
+</div>
+
+<script>
+function irPantalla2(){
+  document.getElementById("pantalla1").classList.add("oculta");
+  document.getElementById("pantalla2").classList.remove("oculta");
+}
+
+function mostrarVideo(){
+  document.getElementById("pantalla2").classList.add("oculta");
+  document.getElementById("pantallaVideo").classList.remove("oculta");
+}
+</script>
+
+</body>
+</html>
